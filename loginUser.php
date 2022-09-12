@@ -12,20 +12,18 @@ $uname = validata($_POST['uname']);
 $pass =     validata($_POST['Password']);
 if(empty($uname))
     {
-    header("Location: index.php?error=User Name is required");
+    echo "Enter a valid username";
     exit();
     }
     else if(empty($pass)){
-    header("Location: index.php?error=Password is required");
+        echo "Enter a valid password";
     exit();
     }
     else{
-        require_once('db_con.php');
+         header("Location: open.php");
+       // require_once('db_con.php');
       //  $sql="SELECT * FROM users where user_name='$uname' and password='$pass'";
         // $res=mysqli_query($con,$sql);
+        exit();
     }
-}
-else{
-    header("Location: index.php");
-    exit();
 }
