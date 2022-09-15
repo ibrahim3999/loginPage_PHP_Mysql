@@ -18,7 +18,7 @@ if(empty($uname) || empty($pass))
 else{
 
        require('db_con.php');
-       /*
+       
        $conn = mysqli_connect($sname, $uname, $password, $db_name);
 
        if (!$conn) {
@@ -30,9 +30,9 @@ else{
        if (mysqli_num_rows($result) > 0) {
           
            while($row = mysqli_fetch_assoc($result)) {
-               //echo " <br> id: " .$row['id']. "<br>  name: ".$row['name'] ."<br> user_name: ".$row['user_name']."<br> password: ".$row['password'];
-               $password=$row['password'];
-               $user_name=$row['user_name'];
+               echo " <br> id: " .$row['id']. "<br>  name: ".$row['name'] ."<br> user_name: ".$row['user_name']."<br> password: ".$row['password'];
+             //  $password=$row['password'];
+               //$user_name=$row['user_name'];
            }
        } else {
            echo "0 results";
@@ -40,7 +40,6 @@ else{
        
        
        mysqli_close($conn);
-       */
        // header("Location: open.php");
         exit();
     }

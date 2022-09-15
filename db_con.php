@@ -1,4 +1,10 @@
 <?php
+$sname="localhost";
+$uname="root";
+$password="";
+$db_name="users";
+$con=mysqli_connect($sname,$uname,$password,$db_name);
+/*
 function ConnDB()
 {
 $sname="localhost";
@@ -26,6 +32,7 @@ function readerAllUsersFromdata()//read All into data structure (user_name and p
        
        $sql = "SELECT * FROM users.all_user";
        $result = mysqli_query($conn, $sql);
+       
        if (mysqli_num_rows($result) > 0) {
           
            while($row = mysqli_fetch_assoc($result)) {
@@ -37,9 +44,11 @@ function readerAllUsersFromdata()//read All into data structure (user_name and p
        } else {
            echo "0 results";
        }
+        
+        $USERS[0][0]="ibrahim";
        mysqli_close($conn);
        return $USERS;
 }
 $isCon=readerAllUsersFromdata();
 $Users=ConnDB();
-
+*/
