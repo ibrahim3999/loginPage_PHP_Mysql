@@ -10,14 +10,10 @@ if(isset($_POST['uname']) && isset($_POST['Password']) )
     }
 $uname = validata($_POST['uname']);
 $pass =     validata($_POST['Password']);
-if(empty($uname))
+if(empty($uname) || empty($pass))
     {
-    echo "Enter a valid username";
-    exit();
-    }
-    else if(empty($pass)){
-        echo "Enter a valid password";
-    exit();
+        echo"At least one of your details is wrong";
+        exit();
     }
     else{
          header("Location: open.php");

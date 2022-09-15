@@ -42,7 +42,7 @@
             padding:10px;
             
         }
-        button{
+        #login{
             float:right;
             background:#555;
             padding :10px 15px;
@@ -51,7 +51,19 @@
             margin-right:10px;
             border: none;
         }
-        button:hover{
+        #login:hover{
+            opacity:.7;
+        }
+        #newUser{
+            float:right;
+            background:#555;
+            padding :10px 15px;
+            color:#fff;
+            border-radius:5px;
+            margin-right:10px;
+            border: none;
+        }
+        #newUser:hover{
             opacity:.7;
         }
         .error{
@@ -78,7 +90,7 @@
         <input type="text" name="uname" placeholder="User Name"><br>
         <label for="">Password</label>
         <input type="Password" name="Password" placeholder="Password"><br>
-        <button type="submit">Login</button>
+        <button id="login" type="submit">Login</button>
     </form>
 </body>
 </html>
