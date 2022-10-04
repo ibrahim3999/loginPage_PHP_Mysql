@@ -11,6 +11,10 @@ class user{
        $this->user_name= $user_name;
        $this->password= $password;
     }
+    function  addUser($id,$name,$user_name,$password)
+    {
+        
+    }
     function get_Pass()
     {
         return $this->password;

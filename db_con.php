@@ -1,12 +1,6 @@
 <?php
 class db_con{
 
-    /*
-$sname="localhost";
-$uname="root";
-$password="";
-$db_name="users";
-*/
 function __construct($sname,$uname,$password,$db_name) 
 {
 $this->sname=$sname;
@@ -19,7 +13,7 @@ function ConnDB()
     $con=mysqli_connect($this->sname,$this->uname,$this->password,$this->db_name);
     if(!$con)
         return "ERROR Connection!!!";
-        
+
     return $con;
 }
 

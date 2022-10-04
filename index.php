@@ -62,6 +62,7 @@
             border-radius:5px;
             margin-right:10px;
             border: none;
+
         }
         #newUser:hover{
             opacity:.7;
@@ -90,9 +91,7 @@
         <label for="">Password</label>
         <input type="Password" name="Password" placeholder="Password"><br>
         <button id="login" type="submit">Login</button>
-         </p>
-         <p><?php  require('login.php');
-          ?>
+        <button id="newUser" type="submit">Create username</button>
           </p>
     </form>
 </body>
