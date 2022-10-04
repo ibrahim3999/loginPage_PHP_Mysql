@@ -1,3 +1,3 @@
 <?php
-require_once('loginUser.php');
+require('login.php');
 echo 'Hello';

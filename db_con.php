@@ -1,17 +1,36 @@
 <?php
+class db_con{
+
+    /*
 $sname="localhost";
 $uname="root";
 $password="";
 $db_name="users";
-$con=mysqli_connect($sname,$uname,$password,$db_name);
-/*
+*/
+function __construct($sname,$uname,$password,$db_name) 
+{
+$this->sname=$sname;
+$this->uname=$uname;
+$this->password=$password;
+$this->db_name=$db_name;
+}
 function ConnDB()
 {
+    $con=mysqli_connect($this->sname,$this->uname,$this->password,$this->db_name);
+    if(!$con)
+        return "ERROR Connection!!!";
+        
+    return $con;
+}
+
+}
+/*
+
 $sname="localhost";
 $uname="root";
 $password="";
 $db_name="users";
-$con=mysqli_connect($sname,$uname,$password,$db_name);
+
 if(!$con)
     return "ERROR Connection!!!";
 

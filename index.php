@@ -73,11 +73,10 @@
             width:95%;
             border-radius:5;
         }
-
     </style>
 </head>
 <body>
-    <form action="loginUser.php" method="post">
+    <form action="login.php" method="post">
         <h2>LOGIN</h2>
  
         <?php 
@@ -91,6 +90,10 @@
         <label for="">Password</label>
         <input type="Password" name="Password" placeholder="Password"><br>
         <button id="login" type="submit">Login</button>
+         </p>
+         <p><?php  require('login.php');
+          ?>
+          </p>
     </form>
 </body>
 </html>
