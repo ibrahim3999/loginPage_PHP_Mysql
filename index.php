@@ -91,8 +91,15 @@
         <label for="">Password</label>
         <input type="Password" name="Password" placeholder="Password"><br>
         <button id="login" type="submit">Login</button>
-        <button id="newUser" type="submit">Create username</button>
+  
+
           </p>
     </form>
+    ';
+          <?php 
+        echo '<form method="POST" action="addUser.php">
+        <button id="newUser" type="submit">Create username</button>
+        </form>';
+?>
 </body>
 </html>
