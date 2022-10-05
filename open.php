@@ -1,3 +1,3 @@
 <?php
 require('login.php');
-echo 'Hello';
+echo 'Hi Welcome to Your Acount';

@@ -27,7 +27,23 @@ function  addUser($id,$name,$user_name,$password)
     return $result;
 
 }
-
+ function chenkLogin($uname,$pass)
+ {
+    $sql = "SELECT * FROM users";
+    $result = mysqli_query($this->ConnDB(), $sql);
+    if (mysqli_num_rows($result) > 0) {
+       
+        while($row = mysqli_fetch_assoc($result)) {
+           // echo " <br> id: " .$row['id']. "<br>  name: ".$row['name'] ."<br> user_name: ".$row['user_name']."<br> password: ".$row['password'];
+            $password=$row['password'];
+            $user_name=$row['user_name'];
+            if( $user_name==strval($uname ) && $password==strval($pass))
+                return true;
+            
+        }
+    }
+    return false;
+}
 }
 /*
 

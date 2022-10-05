@@ -8,28 +8,46 @@ if(isset($_POST['uname']) && isset($_POST['Password']) )
         $data=htmlspecialchars($data);
         return $data;
     }
-    $uname = validata($_POST['uname']);
-    $pass =     validata($_POST['Password']);
-   if(empty($uname) && empty($pass))
+    $unameInput = validata($_POST['uname']);
+    $passInput =     validata($_POST['Password']);
+    $sname="localhost";
+        $uname="root";
+        $password="";
+        $db_name="login";
+    
+   if(empty($unameInput) && empty($passInput))
    {
     ?>
-    <p><?php $result="Please enter Username and Password";?></p>
+    <p><?php echo " Please enter your Username and Password";?></p>
     <?php
     exit();
     }
-    else if(empty($uname) )
+    else if(empty($unameInput) )
     {
         echo"Please enter Username";
         exit();
     }
-    else if(empty($pass))
+    else if(empty($passInput))
     {
-        echo"Please enter password";
+        echo" Please enter password";
         exit();
     }
     else{
 
-       require('db_con.php');
+        require('db_con.php');
+        $db=new db_con($sname,$uname,$password,$db_name);
+        if ($db->chenkLogin($unameInput,$passInput)==true)
+        {
+            header('Location: open.php');
+        }
+
+        /*if( $db->chenkLogin($unameInput,$passInput)==true)
+        {
+            header('Location : open.php');
+        }
+        */
+       
+       /* select * from users
         $sname="localhost";
         $uname="root";
         $password="";
@@ -55,6 +73,8 @@ if(isset($_POST['uname']) && isset($_POST['Password']) )
        mysqli_close($conn);
        // header("Location: open.php");
         exit();
+        */
+        
     }
 }
 

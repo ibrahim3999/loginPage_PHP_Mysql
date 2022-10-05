@@ -93,8 +93,7 @@
         <button id="login" type="submit">Login</button>
     
 
-          </p>
-          
+          </p>          
     </form>
     <?php 
         echo '<form  method="POST" action="addUser.php">
