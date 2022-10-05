@@ -1,6 +1,9 @@
 <?php
 class db_con{
-
+private $sname;
+private $uname;
+private $password;
+private $db_name;
 function __construct($sname,$uname,$password,$db_name) 
 {
 $this->sname=$sname;
@@ -10,11 +13,19 @@ $this->db_name=$db_name;
 }
 function ConnDB()
 {
-    $con=mysqli_connect($this->sname,$this->uname,$this->password,$this->db_name);
-    if(!$con)
-        return "ERROR Connection!!!";
+    return  mysqli_connect($this->sname,$this->uname,$this->password,$this->db_name);
+}
+function  addUser($id,$name,$user_name,$password)
+{ 
+    $con=$this->ConnDB();
+    if (!$con) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+    $sql = "INSERT INTO `users`(`id`, `user_name`, `password`, `name`) VALUES ('$id','$name','$password','$user_name')";
+    $result = mysqli_query($con, $sql);
 
-    return $con;
+    return $result;
+
 }
 
 }

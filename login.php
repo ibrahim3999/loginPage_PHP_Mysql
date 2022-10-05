@@ -33,14 +33,13 @@ if(isset($_POST['uname']) && isset($_POST['Password']) )
         $sname="localhost";
         $uname="root";
         $password="";
-        $db_name="users";
+        $db_name="login";
        $db=new db_con($sname,$uname,$password,$db_name);
        $conn = $db->ConnDB();
        if (!$conn) {
            die("Connection failed: " . mysqli_connect_error());
        }
-       
-       $sql = "SELECT * FROM users.all_user";
+       $sql = "SELECT * FROM users";
        $result = mysqli_query($conn, $sql);
        if (mysqli_num_rows($result) > 0) {
           
